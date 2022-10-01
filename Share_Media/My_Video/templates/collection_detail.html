@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load hitcount_tags %}
+
+{% block page_content %}
+
+    <div  class="col-md-8 offset-md-2">
+        <h1>Collection Details</h1>
+        <br>
+            <h2>Posted by: {{ collection.uploader }}</h2>
+        </br>
+        <strong class="text-secondary">{{ number_of_likes }} Like{{ number_of_likes|pluralize }}</strong>
+        <strong class="text-secondary">{{ number_of_dislikes }} Dislike{{ number_of_dislikes|pluralize }}</strong>
+    </div>
+{%endblock%}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load embed_video_tags %}
+{% load hitcount_tags %}
+
+{% block page_content %}
+
+<div  class="col-md-8 offset-md-2">
+  <h1>Collection List</h1>
+  <hr>
+    {% for collection in collections %}
+        {% video collection.video 'medium' %}
+        <p>Views: {% get_hit_count for collection %}</p>
+        <h2><a  href="{% url 'CollectionDetailView' collection.pk %}"><button class="GFG">Details</button></a></h2>
+    {% endfor %}
+</div>
+{% endblock %}
